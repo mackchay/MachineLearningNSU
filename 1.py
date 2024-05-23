@@ -5,7 +5,9 @@ import numpy as np
 from scipy.linalg import solve, lstsq
 
 a, b, c, d = np.random.uniform(-3, 3, size=4)
-N = 25
+N = 15
+m = 20
+epsilon = 0.5
 x = np.random.uniform(-1, 1, N)
 x.sort()
 
@@ -22,7 +24,6 @@ def func_2(arg):
     return arg * math.sin(2 * math.pi * arg)
 
 
-epsilon = 0.5
 epsilon_distribution_choice = input("enter epsilon distribution: ")
 if epsilon_distribution_choice == 'a':
     print('epsilon distributed uniformly\n')
@@ -51,7 +52,6 @@ print('y =', y_plus_e)
 
 A = []
 B = []
-m = 20
 
 len_x = len(x)
 for i in range(m):
